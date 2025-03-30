@@ -5,12 +5,12 @@
   "framework": "nextjs",
   "regions": ["iad1"],
   "env": {
-    "MONGODB_URI": "mongodb+srv://pseth:pdatabase@2025!@clusterp0.1eeiv.mongodb.net/",
-    "STRIPE_PUBLISHABLE_KEY": "pk_test_51R7kXYPotPgF3lNnwyXMuritQxFb1lqRmnTi1gGDHJXDr9bmFG9CUOhsLeslRUTnTj3JlJjTpl75fLPZ1IoQD62C00fieZJMDR",
-    "STRIPE_SECRET_KEY": "sk_test_51R7kXYPotPgF3lNnh1UAKnk32RU54bplakXWqhD2brF5qo9z9ZmBMMTpSUBCTSDpiJmjo2CLnipfTvX7nuqwzkk200RuTl5J7L",
-    "JWT_SECRET": "leadcloser-jwt-secret-key-for-authentication",
+    "MONGODB_URI": "",
+    "STRIPE_PUBLISHABLE_KEY": "",
+    "STRIPE_SECRET_KEY": "",
+    "JWT_SECRET": "",
     "NEXTAUTH_URL": "https://leadcloser.vercel.app",
-    "NEXTAUTH_SECRET": "leadcloser-nextauth-secret-key"
+    "NEXTAUTH_SECRET": ""
   },
   "headers": [
     {

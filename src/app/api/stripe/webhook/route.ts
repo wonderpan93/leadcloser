@@ -4,7 +4,7 @@ import { getServerUser } from '@/lib/auth/auth';
 import { getSubscriptionForUser, updateSubscription } from '@/lib/db/mongodb';
 
 // Initialize Stripe with the provided secret key
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_51R7kXYPotPgF3lNnh1UAKnk32RU54bplakXWqhD2brF5qo9z9ZmBMMTpSUBCTSDpiJmjo2CLnipfTvX7nuqwzkk200RuTl5J7L', {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2023-10-16',
 });
 
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const signature = request.headers.get('stripe-signature') || '';
     
     // Verify webhook signature
-    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_test';
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
     let event;
     
     try {
@@ -175,7 +175,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     
     return NextResponse.json({
       success: true,
-      publishableKey: process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_51R7kXYPotPgF3lNnwyXMuritQxFb1lqRmnTi1gGDHJXDr9bmFG9CUOhsLeslRUTnTj3JlJjTpl75fLPZ1IoQD62C00fieZJMDR'
+      publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
     });
   } catch (error) {
     console.error('Get Stripe config error:', error);

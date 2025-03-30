@@ -5,7 +5,7 @@ import { subscriptionPlans } from '@/components/subscription/plans';
 import Stripe from 'stripe';
 
 // Initialize Stripe
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_51R7kXYPotPgF3lNnh1UAKnk32RU54bplakXWqhD2brF5qo9z9ZmBMMTpSUBCTSDpiJmjo2CLnipfTvX7nuqwzkk200RuTl5J7L', {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2023-10-16',
 });
 

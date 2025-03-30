@@ -17,12 +17,12 @@ The LeadCloser application requires several environment variables to function pr
 
 ```
 # MongoDB
-MONGODB_URI=mongodb+srv://pseth:pdatabase@2025!@clusterp0.1eeiv.mongodb.net/
+MONGODB_URI= process.env.MONGODB_URI
 
 # Stripe
-STRIPE_PUBLISHABLE_KEY=pk_test_51R7kXYPotPgF3lNnwyXMuritQxFb1lqRmnTi1gGDHJXDr9bmFG9CUOhsLeslRUTnTj3JlJjTpl75fLPZ1IoQD62C00fieZJMDR
-STRIPE_SECRET_KEY=sk_test_51R7kXYPotPgF3lNnh1UAKnk32RU54bplakXWqhD2brF5qo9z9ZmBMMTpSUBCTSDpiJmjo2CLnipfTvX7nuqwzkk200RuTl5J7L
-STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+STRIPE_PUBLISHABLE_KEY= process.env.STRIPE_PUBLISHABLE_KEY
+STRIPE_SECRET_KEY= process.env.STRIPE_SECRET_KEY
+STRIPE_WEBHOOK_SECRET= process.env.STRIPE_WEBHOOK_SECRET
 
 # NextAuth
 NEXTAUTH_SECRET=your_nextauth_secret
