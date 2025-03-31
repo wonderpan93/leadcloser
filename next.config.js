@@ -7,6 +7,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Add these new settings
+  output: 'standalone',
+  experimental: {
+    serverComponentsExternalPackages: ['bcryptjs']
+  }
 }
 
 module.exports = nextConfig
