@@ -1,7 +1,7 @@
 import { MongoClient, Db, Collection } from 'mongodb';
 
 // MongoDB connection string
-const uri = "mongodb+srv://pseth:pdatabase@2025!@clusterp0.1eeiv.mongodb.net/";
+const uri = process.env.MONGODB_URI || "";
 let client: MongoClient | null = null;
 let db: Db | null = null;
 

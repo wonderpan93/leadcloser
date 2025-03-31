@@ -3,7 +3,7 @@ import { getServerUser } from '@/lib/auth/auth';
 import { MongoClient, ObjectId } from 'mongodb';
 
 // MongoDB connection string
-const uri = "mongodb+srv://pseth:pdatabase@2025!@clusterp0.1eeiv.mongodb.net/";
+const uri = process.env.MONGODB_URI || "";
 const client = new MongoClient(uri);
 
 // Connect to MongoDB
