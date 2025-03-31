@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.2",
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.2.0",
     "bcryptjs": "^2.4.3",
+    "class-variance-authority": "^0.7.1",
     "framer-motion": "^10.16.4",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.292.0",
