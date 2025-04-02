@@ -9,31 +9,28 @@ export async function middleware(request: NextRequest) {
     '/signup',
     '/api/auth/login',
     '/api/auth/signup',
-    '/api/auth/logout'
+    '/api/auth/logout',
   ];
-  
+
   const url = new URL(request.url);
-  
+
   // Allow public paths
   if (publicPaths.includes(url.pathname)) {
     return NextResponse.next();
   }
-  
+
   // Check authentication for protected routes
   const authResponse = await authMiddleware(request);
   if (authResponse) {
     return authResponse;
   }
-  
+
   return NextResponse.next();
 }
 
 export const config = {
   matcher: [
-    '/',
-    '/login',
-    '/signup',
-    '/dashboard/:path*',
-    '/api/:path*'
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
+  runtime: 'nodejs', // Force Node.js runtime
 };

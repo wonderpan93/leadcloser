@@ -1,7 +1,7 @@
 import { jwtVerify, SignJWT } from 'jose';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs';
+import { hash, verify } from '@node-rs/bcrypt';
 
 // Secret key for JWT signing and verification
 const JWT_SECRET = new TextEncoder().encode(
@@ -24,14 +24,13 @@ export interface AuthResult {
   token?: string;
 }
 
-// Hash password
+// Updated password functions
 export async function hashPassword(password: string): Promise<string> {
-  return await bcrypt.hash(password, 10);
+  return await hash(password, 10);
 }
 
-// Compare password with hash
 export async function comparePasswords(password: string, hash: string): Promise<boolean> {
-  return await bcrypt.compare(password, hash);
+  return await verify(password, hash);
 }
 
 // Create JWT token

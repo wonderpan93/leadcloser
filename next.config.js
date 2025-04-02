@@ -8,7 +8,16 @@ const nextConfig = {
   },
   output: 'standalone',
   experimental: {
-    serverComponentsExternalPackages: ['bcryptjs'],
+    serverComponentsExternalPackages: ['@node-rs/bcrypt'],
+    optimizeCss: true,
+  },
+  serverExternalPackages: ['@node-rs/bcrypt'], // Changed from experimental
+  webpack: (config) => {
+    config.experiments = { 
+      ...config.experiments, 
+      asyncWebAssembly: true 
+    };
+    return config;
   },
   // Add these critical settings
   staticPageGenerationTimeout: 180,
@@ -29,6 +38,6 @@ const nextConfig = {
       }
     ]
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

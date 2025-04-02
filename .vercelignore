@@ -1,0 +1,10 @@
+# Ignore development files
+**/node_modules
+**/*.md
+**/*.log
+**/*.tsbuildinfo
+**/.git
+**/.github
+**/.vscode
+**/migrations
+**/scripts
