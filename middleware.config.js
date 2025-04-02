@@ -1,3 +1,3 @@
 module.exports = {
-    skipMiddlewareUrlNormalize: true
-  };
+  skipMiddlewareUrlNormalize: true
+};
