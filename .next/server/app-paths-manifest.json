@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/assessment/submit/route": "app/api/assessment/submit/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/user/route": "app/api/auth/user/route.js",
+  "/api/auth/signup/route": "app/api/auth/signup/route.js",
+  "/api/health/route": "app/api/health/route.js",
+  "/api/subscription/route": "app/api/subscription/route.js",
+  "/api/leads/route": "app/api/leads/route.js",
+  "/api/stripe/webhook/route": "app/api/stripe/webhook/route.js",
+  "/api/test-data/route": "app/api/test-data/route.js",
+  "/page": "app/page.js"
+}

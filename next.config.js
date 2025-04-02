@@ -40,4 +40,17 @@ const nextConfig = {
   }
 };
 
-module.exports = nextConfig;
+module.exports = {
+  // Remove or simplify any custom matchers
+  experimental: {
+    forceSwcTransforms: true, // Add this if missing
+  },
+  // Optional: Add build excludes
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(spec|test).(js|jsx|ts|tsx)$/,
+      loader: "ignore-loader",
+    });
+    return config;
+  },
+};
