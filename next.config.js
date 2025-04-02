@@ -1,16 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Add these new settings
   output: 'standalone',
   experimental: {
-    serverComponentsExternalPackages: ['bcryptjs']
+    serverComponentsExternalPackages: ['bcryptjs'],
+  },
+  // Add these critical settings
+  staticPageGenerationTimeout: 180,
+  images: {
+    unoptimized: true
   }
 }
 
