@@ -1,5 +1,6 @@
 //handling API routes
-export { dynamic, runtime } from '../../route.config.js';
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 import { NextRequest, NextResponse } from 'next/server';
 import { hashPassword, createToken, setAuthCookie } from '@/lib/auth/auth';
