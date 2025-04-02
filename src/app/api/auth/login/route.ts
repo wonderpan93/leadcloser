@@ -1,3 +1,6 @@
+//handling API routes
+export { dynamic, runtime } from '../../route.config.js';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { comparePasswords, createToken, setAuthCookie, AuthResult } from '@/lib/auth/auth';
 import { getUserByEmail } from '@/lib/db/users';

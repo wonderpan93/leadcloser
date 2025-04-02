@@ -1,3 +1,6 @@
+//handling API routes
+export { dynamic, runtime } from '../route.config.js';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToMongoDB, getCollections } from '@/lib/db/mongodb';
 

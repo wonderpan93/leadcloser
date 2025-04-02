@@ -1,3 +1,6 @@
+//handling API routes
+export { dynamic, runtime } from '../route.config.js';
+
 import { NextResponse } from 'next/server';
 
 // Sample test data for the application
