@@ -29,11 +29,10 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // REPLACE THIS ENTIRE SECTION WITH:
   matcher: [
     '/',
     '/login',
-    '/signup', 
+    '/signup',
     '/dashboard/:path*',
     '/api/:path*'
   ],

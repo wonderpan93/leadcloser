@@ -4,14 +4,6 @@
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "env": {
-    "MONGODB_URI": "",
-    "STRIPE_PUBLISHABLE_KEY": "",
-    "STRIPE_SECRET_KEY": "",
-    "JWT_SECRET": "",
-    "NEXTAUTH_URL": "https://leadcloser.vercel.app",
-    "NEXTAUTH_SECRET": ""
-  },
   "headers": [
     {
       "source": "/api/(.*)",
