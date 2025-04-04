@@ -1,11 +1,9 @@
 # Ignore development files
-**/node_modules
-**/*.md
+/node_modules
 **/*.log
 **/*.tsbuildinfo
 **/.git
 **/.github
 **/.vscode
-**/migrations
 **/scripts
 .env.local

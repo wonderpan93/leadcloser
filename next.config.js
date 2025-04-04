@@ -8,7 +8,7 @@ const nextConfig = {
   },
   output: 'standalone',
   experimental: {
-    serverComponentsExternalPackages: ['bcryptjs'], // Fix package name
+    serverComponentsExternalPackages: ['bcryptjs'],
     optimizeCss: true,
     forceSwcTransforms: true,
   },
@@ -26,17 +26,23 @@ const nextConfig = {
           { key: 'Access-Control-Allow-Methods', value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT' },
           { key: 'Access-Control-Allow-Headers', value: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization' }
         ]
+      },
+      {
+        // Add cache control for static files (from vercel.json)
+        source: '/_next/static/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }
+        ]
       }
     ]
   },
   webpack: (config) => {
-    // Combined webpack config
     config.experiments = { 
       ...config.experiments, 
       asyncWebAssembly: true 
     };
     
-    // Add test file ignore rule
+    // Ignore test files during build
     config.module.rules.push({
       test: /\.(spec|test).(js|jsx|ts|tsx)$/,
       loader: "ignore-loader",
@@ -46,4 +52,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;  // Export the proper config object
+module.exports = nextConfig;
