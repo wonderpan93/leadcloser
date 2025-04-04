@@ -8,23 +8,14 @@ const nextConfig = {
   },
   output: 'standalone',
   experimental: {
-    serverComponentsExternalPackages: ['@node-rs/bcrypt'],
+    serverComponentsExternalPackages: ['bcryptjs'], // Fix package name
     optimizeCss: true,
+    forceSwcTransforms: true,
   },
-  serverExternalPackages: ['@node-rs/bcrypt'], // Changed from experimental
-  webpack: (config) => {
-    config.experiments = { 
-      ...config.experiments, 
-      asyncWebAssembly: true 
-    };
-    return config;
-  },
-  // Add these critical settings
   staticPageGenerationTimeout: 180,
   images: {
     unoptimized: true
   },
-  // THIS IS THE KEY ADDITION:
   async headers() {
     return [
       {
@@ -37,20 +28,22 @@ const nextConfig = {
         ]
       }
     ]
-  }
-};
-
-module.exports = {
-  // Remove or simplify any custom matchers
-  experimental: {
-    forceSwcTransforms: true, // Add this if missing
   },
-  // Optional: Add build excludes
   webpack: (config) => {
+    // Combined webpack config
+    config.experiments = { 
+      ...config.experiments, 
+      asyncWebAssembly: true 
+    };
+    
+    // Add test file ignore rule
     config.module.rules.push({
       test: /\.(spec|test).(js|jsx|ts|tsx)$/,
       loader: "ignore-loader",
     });
+    
     return config;
   },
 };
+
+module.exports = nextConfig;  // Export the proper config object

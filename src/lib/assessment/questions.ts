@@ -166,7 +166,7 @@ export const assessmentQuestions: AssessmentQuestion[] = [
     options: [
       { value: 'price', label: 'Price / Too expensive' },
       { value: 'timing', label: 'Timing / Not right now' },
-      { value: 'need', label: 'No perceived need / "We're fine as is"' },
+      { value: 'need', label: 'No perceived need / "We\\\'re fine as is"' },
       { value: 'competition', label: 'Using a competitor / Alternative solution' },
       { value: 'approval', label: 'Need approval from others' },
       { value: 'risk', label: 'Perceived risk / Uncertainty' },
